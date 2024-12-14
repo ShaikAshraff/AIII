@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="/static/signup.css">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-box">
+            <h1>Sign Up</h1>
+            <!-- Form to submit data to the signup route -->
+            <form action="/signup" method="POST">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Choose a username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <!-- Error message display -->
+                {% if error %}
+                <p class="error-message" style="color: red;">{{ error }}</p>
+                {% endif %}
+                <button type="submit" class="btn">Sign Up</button>
+            </form>
+            <p class="login-text">Already have an account? <a href="/">Login</a></p>
+        </div>
+    </div>
+</body>
+</html>
